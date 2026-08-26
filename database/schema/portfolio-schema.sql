@@ -1,0 +1,167 @@
+-- show databases;
+-- use rohan_portfolio;
+
+-- create table users (
+-- 	id bigint auto_increment primary key,
+--     username varchar(50) not null unique,
+--     email varchar(150) not null unique, 
+--     password varchar (255) not null,
+--     enabled boolean not null default true,
+--     created_at datetime not null default current_timestamp,
+--     updated_at datetime not null default current_timestamp on update current_timestamp
+-- );
+
+-- create table roles(
+-- 	id bigint auto_increment primary key,
+--     name varchar(50) not null unique
+-- );
+
+-- create table user_roles(
+-- 	user_id bigint not null,
+--     role_id bigint not null,
+--     
+--     primary key (user_id, role_id),
+--     
+--     constraint fk_user_role_user
+-- 		foreign key (user_id)
+--         references users(id)
+--         on delete cascade,
+--         
+-- 	constraint fk_user_roles_role
+-- 		foreign key (role_id)
+--         references roles(id)
+--         on delete cascade
+-- );
+
+-- create table profiles(
+-- 	id bigint auto_increment primary key,
+--     name varchar(100) not null,
+--     headline varchar(200) not null,
+--     bio text,
+--     location varchar(100),
+--     email varchar(150),
+--     github_url varchar(500),
+--     linkedin_url varchar(500),
+--     profile_image_url varchar(500),
+--     resume_url varchar(500),
+--     created_at datetime not null default current_timestamp,
+--     updated_at datetime not null default current_timestamp on update current_timestamp
+-- );
+
+-- create table skills(
+-- 	id bigint auto_increment primary key,
+--     name varchar(100) not null,
+--     category varchar(50) not null,
+--     proficiency int,
+--     icon_url varchar(500),
+--     display_order int not null default 0
+-- );
+
+-- create table projects(
+-- 	id bigint auto_increment primary key,
+--     title varchar(150) not null,
+--     slug varchar(180) not null unique,
+--     short_description varchar(500) not null,
+--     description text,
+--     problem text, 
+--     solution text,
+--     architecture text,
+--     github_url varchar(500),
+--     live_url varchar(500),
+--     image_url varchar(500),
+--     featured boolean not null default false,
+--     display_order int not null default 0,
+--     created_at datetime not null default current_timestamp,
+--     updated_at datetime not null default current_timestamp on update current_timestamp
+-- );
+
+-- create table technologies(
+-- 	id bigint auto_increment primary key,
+--     name varchar(100) not null unique,
+--     category varchar(50) not null,
+--     icon_url varchar(500)
+-- );
+
+-- create table project_technologies(
+-- 	project_id bigint not null,
+--     technology_id bigint not null,
+--     
+--     primary key(project_id, technology_id),
+--     
+--     constraint fk_project_technologies_project
+-- 		foreign key(project_id)
+--         references projects(id)
+--         on delete cascade,
+--         
+-- 	constraint fk_project_technologies_technology
+-- 		foreign key(technology_id)
+--         references technologies(id)
+--         on delete cascade
+-- );
+
+-- create table education(
+-- 	id bigint auto_increment primary key,
+--     institution varchar(200) not null,
+--     degree varchar(200) not null,
+--     field_of_study varchar(200),
+--     start_date date,
+--     end_date date,
+--     description text,
+--     display_order int not null default 0
+-- );
+
+-- create table certifications(
+-- 	id bigint auto_increment primary key,
+--     name varchar(200) not null,
+--     issuing_organization varchar(200),
+--     issue_date date,
+--     credential_url varchar(500),
+--     description text,
+--     display_order int not null default 0
+-- );
+
+-- create table contact_messages (
+-- 	id bigint auto_increment primary key,
+--     name varchar(100) not null,
+--     email varchar(150) not null,
+--     subject varchar(200),
+--     message text not null,
+--     is_read boolean not null default false,
+--     created_at datetime not null default current_timestamp
+-- );
+
+-- create table ai_knowledge (
+-- 	id bigint auto_increment primary key,
+--     title varchar(200) not null,
+--     content text not null,
+--     category varchar(50) not null,
+--     source_reference varchar(255),
+--     active boolean not null default true,
+--     created_at datetime not null default current_timestamp,
+--     updated_at datetime not null default current_timestamp on update current_timestamp
+-- );
+
+-- create index idx_projects_featured
+-- 	on projects(featured);
+--     
+-- create index idx_projects_display_order
+-- 	on projects(display_order);
+--     
+-- create index idx_skills_category
+-- 	on skills(category);
+--     
+-- create index idx_technologies_category
+-- 	on technologies(category);
+--     
+-- create index idx_contact_messages_is_read
+-- 	on contact_messages(is_read);
+--     
+-- create index idx_contact_messages_created_at
+-- 	on contact_messages(created_at);
+--     
+-- create index idx_ai_knowledge_category
+-- 	on ai_knowledge(category);
+    
+-- create index idx_ai_knowledge_active
+-- 	on ai_knowledge(active);
+
