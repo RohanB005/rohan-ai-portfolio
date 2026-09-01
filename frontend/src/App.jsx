@@ -1,56 +1,34 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import Navbar from "./components/layout/Navbar";
 import "./App.css";
 
 function App() {
   return (
-    <main className="app">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <p className="hero-greeting">HELLO, I'M</p>
+    <div className="app">
+      <Navbar />
 
-          <h1 className="hero-name">
-            ROHAN
-            <span> BARKADE</span>
-          </h1>
+      <main>
+        <section id="home" className="placeholder-section">
+          <h1>ROHAN BARKADE</h1>
+          <p>AI-Enabled Software Developer</p>
+        </section>
 
-          <h2 className="hero-role">
-            AI-ENABLED SOFTWARE DEVELOPER
-          </h2>
+        <section id="about" className="placeholder-section">
+          <h2>About</h2>
+        </section>
 
-          <p className="hero-description">
-            I build modern software applications using Java, Spring Boot,
-            React, .NET and AI technologies.
-          </p>
+        <section id="skills" className="placeholder-section">
+          <h2>Skills</h2>
+        </section>
 
-          <div className="hero-buttons">
-            <button className="primary-btn">
-              View My Work
-            </button>
+        <section id="projects" className="placeholder-section">
+          <h2>Projects</h2>
+        </section>
 
-            <button className="secondary-btn">
-              Contact Me
-            </button>
-          </div>
-        </div>
-
-        {/* Future 3D / AI visual will go here */}
-        <div className="hero-visual">
-          <div className="ai-core">
-            <div className="ai-ring ring-one"></div>
-            <div className="ai-ring ring-two"></div>
-            <div className="ai-ring ring-three"></div>
-
-            <div className="ai-center">
-              AI
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+        <section id="contact" className="placeholder-section">
+          <h2>Contact</h2>
+        </section>
+      </main>
+    </div>
   );
 }
 
