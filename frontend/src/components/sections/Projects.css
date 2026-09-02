@@ -1,0 +1,400 @@
+.projects {
+  position: relative;
+}
+
+/* ==============================
+   Projects Grid
+   ============================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* ==============================
+   Project Card
+   ============================== */
+
+.project-card {
+  position: relative;
+
+  padding: 28px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(25, 26, 29, 0.9),
+    rgba(10, 11, 13, 0.92)
+  );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 75px;
+  height: 2px;
+
+  background: var(--accent-primary);
+
+  box-shadow:
+    0 0 12px rgba(227, 27, 35, 0.6);
+}
+
+.project-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 70px;
+  height: 2px;
+
+  background: var(--accent-secondary);
+
+  box-shadow:
+    0 0 12px rgba(214, 166, 42, 0.4);
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(227, 27, 35, 0.35);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(227, 27, 35, 0.06);
+}
+
+/* ==============================
+   Card Top
+   ============================== */
+
+.project-card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.project-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(214, 166, 42, 0.35);
+
+  border-radius: 8px;
+
+  color: var(--accent-gold-bright);
+
+  background: rgba(214, 166, 42, 0.05);
+
+  box-shadow:
+    inset 0 0 18px rgba(214, 166, 42, 0.025);
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+  border-color: rgba(214, 166, 42, 0.65);
+
+  background: rgba(214, 166, 42, 0.08);
+
+  box-shadow:
+    0 0 20px rgba(214, 166, 42, 0.08);
+
+  transform: scale(1.05);
+}
+
+.project-number {
+  color: rgba(214, 166, 42, 0.35);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+/* ==============================
+   Project Title
+   ============================== */
+
+.project-title h3 {
+  color: var(--text-primary);
+
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+
+  line-height: 1.2;
+}
+
+.project-title span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--accent-secondary);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+/* ==============================
+   Description
+   ============================== */
+
+.project-description {
+  margin-top: 18px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.86rem;
+
+  line-height: 1.75;
+}
+
+/* ==============================
+   Features
+   ============================== */
+
+.project-features {
+  margin-top: 24px;
+}
+
+.project-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--accent-primary);
+
+  font-size: 0.6rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.project-features ul {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.project-features li {
+  position: relative;
+
+  padding-left: 17px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.75rem;
+
+  line-height: 1.5;
+}
+
+.project-features li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent-primary);
+
+  box-shadow:
+    0 0 7px rgba(227, 27, 35, 0.5);
+}
+
+/* ==============================
+   Technologies
+   ============================== */
+
+.project-technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 24px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-technologies span {
+  padding: 6px 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 4px;
+
+  color: var(--text-muted);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.03em;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-technologies span:hover {
+  color: var(--accent-gold-bright);
+
+  border-color: rgba(214, 166, 42, 0.3);
+
+  background: rgba(214, 166, 42, 0.04);
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+
+.project-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 26px;
+}
+
+.project-button {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 15px;
+
+  border-radius: 5px;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-button.primary {
+  color: #ffffff;
+
+  background: var(--accent-primary);
+
+  box-shadow:
+    0 7px 20px rgba(227, 27, 35, 0.18);
+}
+
+.project-button.primary:hover {
+  background: var(--accent-red-bright);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(227, 27, 35, 0.3);
+}
+
+.project-button.secondary {
+  border: 1px solid rgba(214, 166, 42, 0.35);
+
+  color: var(--accent-gold-bright);
+
+  background: rgba(214, 166, 42, 0.03);
+}
+
+.project-button.secondary:hover {
+  border-color: var(--accent-gold-bright);
+
+  background: rgba(214, 166, 42, 0.08);
+
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   Responsive
+   ============================== */
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    padding: 22px 18px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .project-button {
+    width: 100%;
+  }
+}
+

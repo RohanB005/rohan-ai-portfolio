@@ -1,23 +1,37 @@
 :root {
-  /* Background */
-  --bg-primary: #05070d;
-  --bg-secondary: #090d16;
-  --bg-surface: rgba(13, 18, 30, 0.72);
+  /* ==============================
+     Iron Man Armor Theme
+     ============================== */
 
-  /* Accent */
-  --accent-primary: #00d9ff;
-  --accent-secondary: #5b8cff;
+  /* Background */
+  --bg-primary: #08090b;
+  --bg-secondary: #111315;
+  --bg-surface: rgba(25, 26, 29, 0.82);
+
+  /* Iron Man Armor */
+  --accent-primary: #e31b23;
+  --accent-secondary: #d6a62a;
+
+  /* Bright Armor Highlights */
+  --accent-red-bright: #ff3038;
+  --accent-gold-bright: #ffd447;
+
+  /* Arc Reactor / Energy */
+  --energy-white: #f5f7fa;
+  --energy-glow: rgba(245, 247, 250, 0.2);
 
   /* Text */
-  --text-primary: #f4f7fb;
-  --text-secondary: #9ca8ba;
-  --text-muted: #667085;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b7b7b7;
+  --text-muted: #777777;
 
   /* Borders */
-  --border-color: rgba(255, 255, 255, 0.09);
+  --border-color: rgba(214, 166, 42, 0.18);
+  --border-red: rgba(227, 27, 35, 0.3);
 
   /* Effects */
-  --glow-primary: rgba(0, 217, 255, 0.25);
+  --glow-primary: rgba(227, 27, 35, 0.3);
+  --glow-secondary: rgba(214, 166, 42, 0.2);
 
   /* Layout */
   --container-width: 1200px;
@@ -38,6 +52,10 @@
   text-rendering: optimizeLegibility;
 }
 
+/* ==============================
+   Global Reset
+   ============================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -51,40 +69,51 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
+
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(0, 217, 255, 0.06),
+      rgba(227, 27, 35, 0.08),
       transparent 30%
     ),
     radial-gradient(
       circle at 80% 70%,
-      rgba(91, 140, 255, 0.06),
+      rgba(214, 166, 42, 0.06),
       transparent 30%
     ),
     var(--bg-primary);
 }
 
+/* ==============================
+   Technical HUD Grid
+   ============================== */
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+
   pointer-events: none;
+
   z-index: -1;
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.025) 1px,
+      rgba(255, 255, 255, 0.018) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.025) 1px,
+      rgba(255, 255, 255, 0.018) 1px,
       transparent 1px
     );
 
   background-size: 50px 50px;
 }
+
+/* ==============================
+   Global Elements
+   ============================== */
 
 button,
 a {
@@ -104,5 +133,5 @@ button {
 
 ::selection {
   background: var(--accent-primary);
-  color: #001018;
+  color: #ffffff;
 }
