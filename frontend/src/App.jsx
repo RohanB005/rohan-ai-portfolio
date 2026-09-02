@@ -1,4 +1,7 @@
 import Navbar from "./components/layout/Navbar";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Skills from "./components/sections/Skills";
 import "./App.css";
 
 function App() {
@@ -7,18 +10,9 @@ function App() {
       <Navbar />
 
       <main>
-        <section id="home" className="placeholder-section">
-          <h1>ROHAN BARKADE</h1>
-          <p>AI-Enabled Software Developer</p>
-        </section>
-
-        <section id="about" className="placeholder-section">
-          <h2>About</h2>
-        </section>
-
-        <section id="skills" className="placeholder-section">
-          <h2>Skills</h2>
-        </section>
+        <Hero />
+        <About />
+        <Skills />
 
         <section id="projects" className="placeholder-section">
           <h2>Projects</h2>
